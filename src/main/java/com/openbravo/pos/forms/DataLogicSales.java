@@ -1093,6 +1093,7 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 + "CITY, "
                 + "REGION, "
                 + "COUNTRY, "
+                + "DISCOUNT, "
                 + "IMAGE "
                 + "FROM CUSTOMERS "
                 + "WHERE CARD = ? AND VISIBLE = " + s.DB.TRUE() + " "
@@ -1133,6 +1134,7 @@ public class DataLogicSales extends BeanFactoryDataSingle {
                 + "CITY, "
                 + "REGION, "
                 + "COUNTRY, "
+                + "DISCOUNT, "
                 + "IMAGE "
                 + "FROM CUSTOMERS WHERE ID = ?"
                 , SerializerWriteString.INSTANCE
@@ -1958,7 +1960,8 @@ public Object transact() throws BasicException {
             c.setCity(dr.getString(21));
             c.setRegion(dr.getString(22));
             c.setCountry(dr.getString(23));
-            c.setImage(dr.getString(24));
+            c.setDiscount(dr.getDouble(24));
+            c.setImage(dr.getString(25));
 
             return c;
         }
